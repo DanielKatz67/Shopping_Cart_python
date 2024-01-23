@@ -9,3 +9,15 @@ class Item:
         return f'Name:\t\t\t{self.name}\n' \
                f'Price:\t\t\t{self.price}\n' \
                f'Description:\t{self.description}'
+    
+    def getPrice(self) -> int:
+        """
+        Returns the price of the item.
+        """
+        return self.price
+    
+    def getName(self) -> str:
+        """
+        Retrns the name of the item.
+        """
+        return self.name
