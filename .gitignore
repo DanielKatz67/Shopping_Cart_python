@@ -2,3 +2,5 @@
 itemsPersonalTest.yml
 .idea
 .pytest_cache
+virtual_environments_for_testing/
+
