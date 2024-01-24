@@ -1,0 +1,4 @@
+*.pyc
+itemsPersonalTest.yml
+.idea
+.pytest_cache
