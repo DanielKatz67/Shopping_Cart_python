@@ -6,9 +6,10 @@ class Item:
         self.description = item_description
 
     def __str__(self) -> str:
-        return f'Name:\t\t\t{self.name}\n' \
-               f'Price:\t\t\t{self.price}\n' \
-               f'Description:\t{self.description}'
+        return f'Name:\t\t\t\t{self.name}\n' \
+               f'Price:\t\t\t\t{self.price}\n' \
+               f'Hashtags:{self.hashtags}\n' \
+               f'Description:\t\t\t{self.description}'
     
     def getPrice(self) -> int:
         """
@@ -21,3 +22,9 @@ class Item:
         Retrns the name of the item.
         """
         return self.name
+    
+    def getHashtags(self) -> list:
+        """
+        Retrns the hashtags of the item.
+        """
+        return self.hashtags

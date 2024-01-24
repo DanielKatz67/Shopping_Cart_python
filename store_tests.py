@@ -15,7 +15,6 @@ def test_lexical_sort_with_empty_shopping_cart_search_by_name(store):
     expected_items_list.sort(key=lambda item: item.name)
     assert expected_items_list == store.search_by_name('')
 
-
 @pytest.mark.search
 def test_lexical_sort_with_empty_shopping_cart_and_search_for_item(store):
     search_phrase = 'the '

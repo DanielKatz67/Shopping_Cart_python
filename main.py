@@ -27,62 +27,70 @@ def main():
     # while action != 'exit':
     #     if action not in POSSIBLE_ACTIONS:
     #         print('No such action...')
-    #         continue
-    #     if action == 'checkout':
-    #         print(f'The total of the purchase is {store.checkout()}.')
-    #         print('Thank you for shopping with us!')
-    #         return
-    #     if action == 'exit':
-    #         print('Goodbye!')
-    #         return
-    #     getattr(store, action)(params)
-    
+    #     else:
+    #         try:
+    #             if action == 'checkout':
+    #                 print(f'The total of the purchase is {store.checkout()}.')
+    #                 print('Thank you for shopping with us!')
+    #                 return
+    #             elif action == 'exit':
+    #                 print('Goodbye!')
+    #                 return
+    #             else:
+    #                 result = getattr(store, action)(params)
+    #                 if result is not None:
+    #                     for item in result:
+    #                         print(item)
+    #         except errors.ItemNotExistError as e:
+    #             print(e)
+    #         except errors.TooManyMatchesError as e:
+    #             print(e)
+    #         except errors.ItemAlreadyExistsError as e:
+    #             print(e)
     #     action, params = read_input()
+    # print('Goodbye!')
 
-    # #personal testing:
-    # shopping_cart = ShoppingCart()
+    # #more tests:
 
-    # # Create some test items
-    # item1 = Item("Soap", 5, ["cleaning", "hygiene"], "A bar of soap for daily use")
-    # item2 = Item("Shampoo", 10, ["haircare", "beauty"], "Shampoo for shiny hair")
-    # item3 = Item("Toothpaste", 3, ["dental", "hygiene"], "Fluoride toothpaste for teeth")
+    store = Store(ITEMS_FILE)
 
+
+
+    # store = Store('itemsPersonalTest.yml')
+    # print(store)
+    #
     # # Add items to the shopping cart
     # try:
-    #     shopping_cart.add_item(item1)
-    #     shopping_cart.add_item(item2)
-    #     shopping_cart.add_item(item3)
-    #     print("Items added successfully")
+    #     store.add_item("i4")
+    #     store.add_item("i5")
+    #     print("Items added successfully\n")
     # except errors.ItemAlreadyExistsError as e:
     #     print(e)
-
+    #
     # # Display the contents of the cart
-    # print("Shopping Cart Contents:\n", shopping_cart)
-
+    # print("Shopping Cart Contents:\n", store.getShoppingCart())
+    #
+    # # items_consists_i = store.search_by_name("i")
+    # # print("After search by name 'i': ")
+    # # for item in items_consists_i:
+    # #     print(f"{item}\n--------------")
+    #
+    # items_with_H1 = store.search_by_hashtag("H1")
+    # print("After search by hashtag 'H1': ")
+    # for item in items_with_H1:
+    #     print(f"{item}\n--------------")
+    #
     # # # Remove an item
     # # try:
     # #     shopping_cart.remove_item("Shampoo")
     # #     print("Shampoo removed from the cart")
     # # except errors.ItemNotExistError as e:
     # #     print(e)
-
     # # # Display the contents of the cart after removal
     # # print("Shopping Cart Contents after removal:\n", shopping_cart)
+    # #
+    # # print(f"Total price: {store.checkout()}")
 
-    # subtotal = shopping_cart.get_subtotal()
-    # print(subtotal)
-
-    # word = "soupA"
-    # print(f"The word: {word}")
-    # print(word.find("sop"))
-
-    filtered_word = "soup"
-    list = ["soup", "banna", "soup A", "soupB"]
-    filtered_list = [word for word in list if word.find(filtered_word) != -1]
-    print(list)
-    print(filtered_list)
-
-  
 
 if __name__ == '__main__':
     main()
